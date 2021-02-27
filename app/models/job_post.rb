@@ -10,4 +10,6 @@ class JobPost < ActiveRecord::Base
     #job_post.creates_author(hash of attributes) / creates and persists
     belongs _to :client
 
+    #join table: belongs to 2 objects, this 2 objects are now related trough this 1 object (recruiter has many clients through job_posts)
+
 end

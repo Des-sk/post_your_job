@@ -1,6 +1,6 @@
 class Recruiter < ActiveRecord::Base
     has_many :job_posts
-    has_many :clients
+    has_many :clients through :job_posts
 
     #has many methods
     #recruiter.job_posts / ruturns and array, a collection, we can iterait ..end
