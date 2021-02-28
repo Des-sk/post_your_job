@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_034018) do
+ActiveRecord::Schema.define(version: 2021_02_28_053259) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
-    t.integer "recruiters_id"
+    t.integer "recruiter_id"
   end
 
   create_table "job_posts", force: :cascade do |t|
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 2021_02_26_034018) do
     t.string "requirements"
     t.string "salary_range"
     t.string "recruiter_email"
-    t.integer "recruiters_id"
-    t.integer "clients_id"
+    t.integer "recruiter_id"
+    t.integer "client_id"
   end
 
   create_table "recruiters", force: :cascade do |t|

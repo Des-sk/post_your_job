@@ -1,5 +1,5 @@
 require './config/environment'
 
 
-use JobPostController
+use JobPostsController
 run ApplicationController
