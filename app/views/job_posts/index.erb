@@ -1,2 +1,5 @@
-index view
+index page
 
+<% @job_posts.each do |jp| %>
+    <p><%= jp.title %> - <%= jp.id %> </p>
+<% end %>

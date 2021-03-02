@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2021_02_28_053259) do
     t.string "title"
     t.string "requirements"
     t.string "salary_range"
-    t.string "recruiter_email"
-    t.integer "recruiter_id"
+    t.string "recruiter_email"#dont think is necesary, because belongs to a recruiter that has an email
+    t.integer "recruiter_id" 
     t.integer "client_id"
   end
 

@@ -1,4 +1,4 @@
-require './config/environment'
+#require './config/environment'
 
 class ApplicationController < Sinatra::Base
 
@@ -15,15 +15,15 @@ class ApplicationController < Sinatra::Base
   
   #views mimic CRUD actions 
 
-  #  @instance variables- to comunicate our cotrollers with our views
  
   configure do
-    #set :sessions 
-    set :public_folder, 'public'
+    #set :sessions
     set :views, 'app/views'
+    set :public_folder, 'public'
+    
   end
 
-  get "/" do
+  get '/' do
     erb :welcome
   end
 
