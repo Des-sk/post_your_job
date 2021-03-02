@@ -21,7 +21,7 @@ class JobPostsController < ApplicationController
     #details of 1 post, tiene id= dinamic route- changes data based on incoming request
     #show route
     get '/job_posts/:id' do
-         @job_post = JobPost.find(params[:id])
+         get_job_post
          erb :'job_posts/show'
         #get the requested post- params
         #show details
@@ -41,18 +41,28 @@ class JobPostsController < ApplicationController
         #retreive the obeject of the id
         #autofill a form with the details of that object
         #render to our user to fillout
+        get_job_post
+        erb :"/job_posts/edit"
+
     end
 
     #user submited edit form
-    patch 'job_posts/:id/' do
+    patch '/job_posts/:id' do
         #patch updates an existing object
         #no view
         #update object with new attributes
+        get_job_post
+        @job_post.update(title: params[:title], requirements: params[:requirements], salary_range: params[:salary_range], recruiter_id: params[:recruiter_id], recruiter_email: params[:recruiter_email])
+        redirect "/job_posts/#{@job_post.id}"
     end
 
     #delete existing post
-    delete'job_post/:id' do
+    delete'/job_posts/:id' do
         #no view
+        get_job_post
+        @job_post.destroy
+        redirect '/job_posts'
+
     end
 
 

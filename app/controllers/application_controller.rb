@@ -20,11 +20,16 @@ class ApplicationController < Sinatra::Base
     #set :sessions
     set :views, 'app/views'
     set :public_folder, 'public'
-    
   end
 
   get '/' do
     erb :welcome
+  end
+
+  helpers do
+    def get_job_post
+      @job_post = JobPost.find_by(id:params[:id])
+    end
   end
 
 end

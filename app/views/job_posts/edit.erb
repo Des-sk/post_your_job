@@ -1,0 +1,11 @@
+edit form
+
+<form action="/job_posts/<%= @job_post.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    Title: <input type="text" name="title" value="<%= @job_post.title %>">
+    Minimum Requirements: <textarea name="requirements"><%= @job_post.requirements %></textarea>
+    Salary Range: <input type="text" name="salary_range" value="<%= @job_post.salary_range %>">
+    Recruiter: <input type="text" name="recruiter_id" value="<%= @job_post.recruiter_id %>">
+    Contact: <input type="text" name="recruiter_email" value="<%= @job_post.recruiter_email %>">
+    <input type="submit" value="Edit Job Post">
+</form>

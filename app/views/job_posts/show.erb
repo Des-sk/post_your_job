@@ -1,8 +1,13 @@
-Title: <%= @job_post.title %><br>
-Minimun Requirements: <%= @job_post.requirements %><br>
-Salary Rage: <%= @job_post.salary_range %><br>
-Recruiter: <%= @job_post.recruiter_id %><br>
-Contact: 
-Client: <%= @job_post.client_id %><br>
+<p> Title: <%= @job_post.title %></p> <br>
+<p> Minimun Requirements: <%= @job_post.requirements %></p> <br>
+<p> Salary Rage: <%= @job_post.salary_range %><p> <br>
+<p> Recruiter: <%= @job_post.recruiter_id %><p> <br>
+<p> Contact: </p> <br>
+<p> Client: <%= @job_post.client_id %><p> <br>
 
 <a href="/job_posts/<%= @job_post.id %>/edit">Edit Job Post</a>
+
+<form action="/job_posts/<%= @job_post.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Job Post">
+</form>
