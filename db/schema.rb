@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_053259) do
+ActiveRecord::Schema.define(version: 2021_03_02_204812) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -21,14 +21,15 @@ ActiveRecord::Schema.define(version: 2021_02_28_053259) do
     t.string "title"
     t.string "requirements"
     t.string "salary_range"
-    t.string "recruiter_email"#dont think is necesary, because belongs to a recruiter that has an email
-    t.integer "recruiter_id" 
+    t.string "recruiter_email"
+    t.integer "recruiter_id"
     t.integer "client_id"
   end
 
   create_table "recruiters", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "password_digest"
   end
 
 end

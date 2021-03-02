@@ -17,8 +17,11 @@ class ApplicationController < Sinatra::Base
 
  
   configure do
-    #set :sessions
+    
     set :views, 'app/views'
+    enable :sessions
+    set :session_secret, "secret"
+    #secure- .env file with key and value pair, like IPA key in cli
     set :public_folder, 'public'
   end
 
@@ -31,5 +34,7 @@ class ApplicationController < Sinatra::Base
       @job_post = JobPost.find_by(id:params[:id])
     end
   end
+
+
 
 end
