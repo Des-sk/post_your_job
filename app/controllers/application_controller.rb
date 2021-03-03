@@ -23,6 +23,7 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "secret"
     #secure- .env file with key and value pair, like IPA key in cli
     set :public_folder, 'public'
+    register Sinatra::Flash
   end
 
   get '/' do
