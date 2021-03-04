@@ -31,7 +31,10 @@ class JobPostsController < ApplicationController
     post '/job_posts' do
         #create new post
         #redirect user somewhere
-        @job_post = JobPost.create(params)
+        @job_post = JobPost.new(params)
+        #jobpost belongs to recruiter
+        @job_post.recruiter_id = session[:recruiter_id]
+        @job_post.save
         redirect "/job_posts/#{@job_post.id}"
 
     end
@@ -42,8 +45,12 @@ class JobPostsController < ApplicationController
         #autofill a form with the details of that object
         #render to our user to fillout
         get_job_post
+        if @job_post.recruiter == current_user
         erb :"/job_posts/edit"
-
+        else
+            flash[:error] = "You are not the owner of this Job Post"
+            redirect '/job_posts'
+        end
     end
 
     #user submited edit form
@@ -52,17 +59,21 @@ class JobPostsController < ApplicationController
         #no view
         #update object with new attributes
         get_job_post
-        @job_post.update(title: params[:title], requirements: params[:requirements], salary_range: params[:salary_range], recruiter_id: params[:recruiter_id], recruiter_email: params[:recruiter_email])
-        redirect "/job_posts/#{@job_post.id}"
+        if @job_post.recruiter == current_user
+            @job_post.update(title: params[:title], requirements: params[:requirements], salary_range: params[:salary_range], recruiter_id: params[:recruiter_id], recruiter_email: params[:recruiter_email])
+            redirect "/job_posts/#{@job_post.id}"   
+        else
+            flash[:error] = "You are not the owner of this Job Post"
+            redirect '/job_posts'
+        end
     end
 
     #delete existing post
-    delete'/job_posts/:id' do
+    delete '/job_posts/:id' do
         #no view
         get_job_post
         @job_post.destroy
         redirect '/job_posts'
-
     end
 
 

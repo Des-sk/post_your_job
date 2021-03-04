@@ -31,9 +31,23 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do
+
+
+     # return the logged in user
+    def current_user # return logged in user 
+      @current_user ||= Recruiter.find_by_id(session[:recruiter_id]) #memoization
+    end 
+
+    # check if a user logged in
+    def logged_in?
+        !!session[:recruiter_id]
+    end  
+
     def get_job_post
       @job_post = JobPost.find_by(id:params[:id])
     end
+
+
   end
 
 

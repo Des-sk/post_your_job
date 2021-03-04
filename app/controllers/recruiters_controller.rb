@@ -7,7 +7,7 @@ class RecruitersController < ApplicationController
     #logout- '/logout'= delete action- clears our sessions
 
     get '/signup' do
-        erb :"recruiters/signup"
+        erb :'recruiters/signup'
     end
 
     post '/signup' do
@@ -29,7 +29,7 @@ class RecruitersController < ApplicationController
     end
 
     get '/login' do
-        erb :"recruiters/login"
+        erb :'recruiters/login'
     end
 
     post '/login' do
@@ -45,5 +45,32 @@ class RecruitersController < ApplicationController
         end
 
     end
+
+    get '/recruiters' do
+        @recruiters = Recruiter.all
+        erb :'recruiters/index'
+    end
+
+    get '/recruiters/:id' do
+        get_recruiter
+        erb :'recruiters/profile'
+    end
+
+    get '/logout' do 
+        session.clear
+        redirect '/login'
+    end
+
+
+
+
+
+    private 
+
+    def get_recruiter
+        @recruiter = Recruiter.find_by(id:params[:id])
+    end 
+
+
 
 end
