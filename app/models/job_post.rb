@@ -2,6 +2,7 @@ class JobPost < ActiveRecord::Base
     #belongs to a recruiter, belongs to a client
 
     belongs_to :recruiter
+    
 
     #belongs_to methods:
     #job_post.recruiter / read the recruiter this job post belongs to

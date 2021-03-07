@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_204812) do
+ActiveRecord::Schema.define(version: 2021_03_06_030534) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2021_03_02_204812) do
     t.string "title"
     t.string "requirements"
     t.string "salary_range"
-    t.string "recruiter_email" #quitar
     t.integer "recruiter_id"
     t.integer "client_id"
   end
@@ -30,7 +29,6 @@ ActiveRecord::Schema.define(version: 2021_03_02_204812) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    #anadir job_post_id
   end
 
 end

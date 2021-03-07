@@ -51,10 +51,27 @@ class RecruitersController < ApplicationController
         erb :'recruiters/index'
     end
 
+    
     get '/recruiters/:id' do
-        get_recruiter
-        erb :'recruiters/profile'
+        @recruiter = Recruiter.find_by(id:params[:id])
+        @job_posts = @recruiter.job_posts
+        # if @recruiter.id == @job_posts.recruiter.id
+        #   job_posts.each do |title|
+        #     puts " Job Posts:"
+        #     "#{job_posts.title}"
+             erb :'recruiters/profile'
+        #   end
+
+        # else 
+        #     flash[:error] = "This Recruiter doesnt have a Job Post"
+         #   redirect 'recruiters/index'
+        # end
+
+     
     end
+    
+
+    
 
     get '/logout' do 
         session.clear
@@ -63,13 +80,7 @@ class RecruitersController < ApplicationController
 
 
 
-
-
-    private 
-
-    def get_recruiter
-        @recruiter = Recruiter.find_by(id:params[:id])
-    end 
+   
 
 
 

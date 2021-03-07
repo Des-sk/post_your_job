@@ -2,8 +2,7 @@ index page
 
 <% @job_posts.each do |jp| %>
     <p><%= jp.title %> - <%= jp.id %>
-        <% if current_user == jp.recruiter %>
-            <a href="/job_posts/<%= jp.id %>/edit">Edit</a> 
-        <% end %>
+        
+        
     </p>
 <% end %>

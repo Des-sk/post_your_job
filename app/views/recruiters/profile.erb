@@ -1,5 +1,10 @@
 <p> Name: <%= @recruiter.name %></p> <br>
 <p> Contact: <%= @recruiter.email %></p> <br>
 
-<p> Job Posts:<%= @recruiter.job_posts %></p>
-  
+
+<% @job_posts.each do |jp| %>
+    <p><%= jp.title %> - <%= jp.id %>
+        
+        
+    </p>
+<% end %>
