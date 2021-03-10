@@ -17,17 +17,17 @@ class JobPostsController < ApplicationController
         erb :'/job_posts/new'
     end
 
-   
+
     #details of 1 post, tiene id= dinamic route- changes data based on incoming request
     #show route
     get '/job_posts/:id' do
          get_job_post
          @recruiter = Recruiter.find_by_id(params[:id])
          erb :'/job_posts/show'
-    
-        #get the requested post- params
+    end 
+    #get the requested post- params
         #show details
-    end
+    
 
     #user submitted the new post form
     post '/job_posts' do
@@ -84,8 +84,11 @@ class JobPostsController < ApplicationController
         end
     end
         
-   
-
+    module ApplicationHelper
+        def my_link_to(text, href)
+          "<a href='#{href}'>#{text}</a>".html_safe
+        end
+      end
 
 end
 

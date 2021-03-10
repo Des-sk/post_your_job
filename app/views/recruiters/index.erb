@@ -1,8 +1,7 @@
 
-<% @recruiters.each do |r| %>
-    <p><%= r.name %> - <%= r.id %></p>
+<h1> Recruiters </h1>
 
-
-
+<% @recruiters.each do |r| %> </br>
+    <li><a href="/recruiters/<%=r.id %>"><%= r.name %></a> </li>
 
 <% end %>

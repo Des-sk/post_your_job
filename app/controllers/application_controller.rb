@@ -32,7 +32,6 @@ class ApplicationController < Sinatra::Base
 
   helpers do
 
-
      # return the logged in user
     def current_user # return logged in user 
       @current_user ||= Recruiter.find_by_id(session[:recruiter_id]) #memoization

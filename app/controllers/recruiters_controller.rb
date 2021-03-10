@@ -71,8 +71,6 @@ class RecruitersController < ApplicationController
     end
     
 
-    
-
     get '/logout' do 
         session.clear
         redirect '/login'

@@ -1,10 +1,17 @@
-edit form
+
 
 <form action="/job_posts/<%= @job_post.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
-    Title: <input type="text" name="title" value="<%= @job_post.title %>">
-    Minimum Requirements: <textarea name="requirements"><%= @job_post.requirements %></textarea>
-    Salary Range: <input type="text" name="salary_range" value="<%= @job_post.salary_range %>">
-   
+    <br>
+    Title: <input type="text" name="title" value="<%= @job_post.title %>"><br>
+    <br>
+    Minimun Requirements: <br>
+    <textarea name="requirements" rows="2" cols="30"><%= @job_post.requirements %></textarea>  </textarea><textarea name="requirements" rows="2" cols="30"><%= @job_post.requirements %></textarea></textarea><br>
+    <textarea name="requirements" rows="2" cols="30"> <%= @job_post.requirements %></textarea> </textarea><textarea name="requirements" rows="2" cols="30"><%= @job_post.requirements %></textarea></textarea><br>
+    <textarea name="requirements" rows="2" cols="30"><%= @job_post.requirements %></textarea>  </textarea><textarea name="requirements" rows="2" cols="30"><%= @job_post.requirements %></textarea></textarea><br>
+    <br>
+    Salary Range: <input type="text" name="salary_range" value="<%= @job_post.salary_range %>"><br>
+    <br>
     <input type="submit" value="Edit Job Post">
 </form>
+   

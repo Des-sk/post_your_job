@@ -1,6 +1,6 @@
 class Recruiter < ActiveRecord::Base
     has_many :job_posts
-    has_many :clients, through: :job_posts
+    has_many :clients
     has_secure_password
         #from active record- adds salt to password
 end

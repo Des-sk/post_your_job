@@ -1,20 +1,26 @@
 
 
-
-Title: <%= @job_post.title %> <br>
- Minimun Requirements: <%= @job_post.requirements %><br>
- Salary Rage: <%= @job_post.salary_range %><br>
- Recruiter: <%= @job_post.recruiter.name %><br>
- Contact: <%= @job_post.recruiter.email %><br>
- Client: <%= @job_post.client_id %><br>
- 
+ <h4>Title:</h4>
+    <%= @job_post.title %> <br>
+ <h4>Minimun Requirements:</h4>
+    <%= @job_post.requirements %> <%= @job_post.requirements %> <%= @job_post.requirements %><br>
+    <%= @job_post.requirements %> <%= @job_post.requirements %> <%= @job_post.requirements %><br>
+    <%= @job_post.requirements %> <%= @job_post.requirements %> <%= @job_post.requirements %><br>
+ <h4>Salary Rage:</h4> 
+    <%=@job_post.salary_range %>
+ <h4>Recruiter:</h4> 
+    <%= @job_post.recruiter.name %><br>
+ <h4>Contact:</h4>
+    <%= @job_post.recruiter.email %><br>
+    <br> 
+ <br>
 <% if current_user == @job_post.recruiter %>
-    <a href="/job_posts/<%= @job_post.id %>/edit">Edit Job Post</a>
+    <a href="/job_posts/<%= @job_post.id %>/edit">Edit Job Post</a> 
 <% end %>
-
+  
 <% if current_user == @job_post.recruiter %>
 
-    <form action="/job_posts/<%= @job_post.id %>" method="post">
+    <form action="/job_posts/<%= @job_post.id %>" method="post"><br><br><br>
         <input type="hidden" name="_method" value="delete">
         <input type="submit" value="Delete Job Post">
     </form>

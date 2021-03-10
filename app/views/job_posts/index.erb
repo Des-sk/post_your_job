@@ -1,8 +1,8 @@
-index page
 
-<% @job_posts.each do |jp| %>
-    <p><%= jp.title %> - <%= jp.id %>
+  <h1>Job Posts</h1>
+  
+  <% @job_posts.each do |jp| %><br>
+  <li><a href="/job_posts/<%= jp.id %>"><%= jp.title %></a></li>
+  
+  <% end %>      
         
-        
-    </p>
-<% end %>
