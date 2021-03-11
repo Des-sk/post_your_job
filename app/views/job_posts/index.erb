@@ -1,8 +1,45 @@
 
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <style>
+  .center {
+    padding: 70px 1;
+    border: 2px solid grey;
+    text-align: center;
+  }
+
+  .link{
+   text-decoration: none; 
+   background-color: none;
+   font-family: "Helvetiva Neue", helvetica, arial;
+   color: grey;
+
+  }
+
+  .title{ 
+    padding-left: 100px;
+    padding-bottom: 30px;
+    font-family: "Helvetiva Neue", helvetica, arial;
+    color: grey;
+  }
+
+  </style>
+  </head>
+  <body>
+  
+  <div class="title">
   <h1>Job Posts</h1>
+  </div>
+
+  <div class="center">
   
   <% @job_posts.each do |jp| %><br>
-  <li><a href="/job_posts/<%= jp.id %>"><%= jp.title %></a></li>
+    <a href="/job_posts/<%= jp.id %>">
+    <div class="link">  
+      <h3><%= jp.title %></h3>
+    </div> 
+    </a>
   
   <% end %>      
-        
+  </div>     

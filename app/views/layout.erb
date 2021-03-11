@@ -1,23 +1,49 @@
 <!DOCTYPE html>
-
-
-
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Your Jobs</title>
+  <title>Resources</title>
+  
+  <style>
+
+  span.a {
+    display: inline; /* the default for span */
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 1px grey;  
+    text-decoration: none; 
+    background-color: none;
+    font-family: "Helvetiva Neue", helvetica, arial;
+    color: grey;
+  }
+
+  .link{
+   text-decoration: none; 
+   background-color: none;
+   font-family: "Helvetiva Neue", helvetica, arial;
+   color: grey;
+</style
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Hello from layout</h1>
+
+<div class="jumbotron text-center">
+  <h1>Resources</h1>
+  <p>See all open Job Posts, Recruiters Profiles and Create your own Job Post!</p> <br>
+  <div>
+  <span class="a"><a href="/job_posts">Home</a></span>   <span class="a"><a href="/recruiters">Recruiters</a></span> <span class="a"><a href="/job_posts/new">Create New Job Post</a></span>  <span class="a"><a href="/logout"><strong>Logout </strong></a></span></br>
+  </div>
+</div>
         <% flash.keys.each do |type| %>
             <div data-alert class="flash <%= type %> alert-box radius">
                 <%= flash[type] %>
             </div>
         <% end %>
-        <a href="/job_posts">Home</a> <a href="/recruiters">Recruiters</a> <a href="/job_posts/new">Create New Job Post</a> <a href="/logout"><strong>Logout </strong></a></br>
     <%= yield %>
     
 </body>
