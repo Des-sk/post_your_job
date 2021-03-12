@@ -1,5 +1,36 @@
 
 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.center {
+  padding: 70px 1;
+  border: 2px solid grey;
+  text-align: center;
+}
+
+.link{
+ text-decoration: none; 
+ background-color: none;
+ font-family: "Helvetiva Neue", helvetica, arial;
+ color: grey;
+
+}
+
+.title{ 
+  padding-left: 100px;
+  padding-bottom: 30px;
+  font-family: "Helvetiva Neue", helvetica, arial;
+  color: grey;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="center"> 
 <form action="/job_posts/<%= @job_post.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
     <br>
@@ -14,4 +45,5 @@
     <br>
     <input type="submit" value="Edit Job Post">
 </form>
+</div>
    

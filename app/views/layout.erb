@@ -35,8 +35,17 @@
 <div class="jumbotron text-center">
   <h1>Resources</h1>
   <p>See all open Job Posts, Recruiters Profiles and Create your own Job Post!</p> <br>
-  <div>
-  <span class="a"><a href="/job_posts">Home</a></span>   <span class="a"><a href="/recruiters">Recruiters</a></span> <span class="a"><a href="/job_posts/new">Create New Job Post</a></span>  <span class="a"><a href="/logout"><strong>Logout </strong></a></span></br>
+
+  <% if logged_in? %>
+        <span class="a"><a href="/job_posts">Home</a></span>   <span class="a"><a href="/recruiters">Recruiters</a></span> <span class="a"><a href="/job_posts/new">Create New Job Post</a></span>  <span class="a"><a href="/logout"><strong>Logout </strong></a></span></br>
+  
+    <%else%>
+  
+        <h2>Post Your Jobs</h2>
+        <span class="a"><a href="/login"><strong>Login </strong></a></span> <span class="a"><a href="/signup"><strong>Sign Up </strong></a></span>  
+  
+    <%end%>
+</div>
   </div>
 </div>
         <% flash.keys.each do |type| %>

@@ -1,17 +1,54 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
 
+.center {
+  padding: 70px 1;
+  border: 2px solid grey;
+  text-align: center;
+}
+
+.link{
+ text-decoration: none; 
+ background-color: none;
+ font-family: "Helvetiva Neue", helvetica, arial;
+ color: grey;
+
+}
+
+.title{ 
+  padding-left: 100px;
+  padding-bottom: 30px;
+  font-family: "Helvetiva Neue", helvetica, arial;
+  color: grey;
+}
+
+</style>
+</head>
+<body>
+ 
+ 
+<div class="title">
  <h4>Title:</h4>
     <%= @job_post.title %> <br>
- <h4>Minimun Requirements:</h4>
+    <br>
+ <h4>Requirements:</h4>
     <%= @job_post.requirements %> <%= @job_post.requirements %> <%= @job_post.requirements %><br>
     <%= @job_post.requirements %> <%= @job_post.requirements %> <%= @job_post.requirements %><br>
     <%= @job_post.requirements %> <%= @job_post.requirements %> <%= @job_post.requirements %><br>
+    <br>
  <h4>Salary Rage:</h4> 
-    <%=@job_post.salary_range %>
+    <%=@job_post.salary_range %><br>
+    <br>
  <h4>Recruiter:</h4> 
     <%= @job_post.recruiter.name %><br>
+    <br>
  <h4>Contact:</h4>
     <%= @job_post.recruiter.email %><br>
+    <br>
+</div>
     <br> 
  <br>
 <% if current_user == @job_post.recruiter %>

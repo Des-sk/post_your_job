@@ -1,11 +1,43 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.center {
+  padding: 70px 1;
+  border: 2px solid grey;
+  text-align: center;
+}
+
+.link{
+ text-decoration: none; 
+ background-color: none;
+ font-family: "Helvetiva Neue", helvetica, arial;
+ color: grey;
+
+}
+
+.title{ 
+  padding-left: 100px;
+  padding-bottom: 30px;
+  font-family: "Helvetiva Neue", helvetica, arial;
+  color: grey;
+}
+
+</style>
+</head>
+<body>
+ 
+ 
+<div class="title">
 <h4> Name: </h4>
     <%= @recruiter.name %></p> <br>
 <h4> Contact:</h4>
     <%= @recruiter.email %></p> <br>
 
 <% if @recruiter.job_posts.empty? %>
-<%= flash[:error]= "This Recruiter doesnt have any open Job Posts at the moment."%>
+<h3><%= flash[:error]= "This Recruiter doesn't have any open Job Posts at the moment."%></h3>
 
 <% else %>   
 <h2><%= @recruiter.name %>'s Open Job Posts:</h2></br>
